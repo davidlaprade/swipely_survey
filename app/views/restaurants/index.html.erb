@@ -1,0 +1,81 @@
+<h1>Listing restaurants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Establishment</th>
+      <th>Ownername</th>
+      <th>Address one</th>
+      <th>Address two</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zipcode</th>
+      <th>Email</th>
+      <th>Website</th>
+      <th>Phone</th>
+      <th>Restaurant type</th>
+      <th>Employees</th>
+      <th>Revenue type</th>
+      <th>Marketing</th>
+      <th>Marketing budget boolean</th>
+      <th>Marketing budget</th>
+      <th>Social media boolean</th>
+      <th>Social media types</th>
+      <th>Other social media types</th>
+      <th>Online ads boolean</th>
+      <th>Online ads types</th>
+      <th>Other online ads types</th>
+      <th>Analytics boolean</th>
+      <th>Analytics software</th>
+      <th>Social ads boolean</th>
+      <th>Why social ads</th>
+      <th>Why social ads other</th>
+      <th>Ad sites</th>
+      <th>Other ads sites</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.establishment %></td>
+        <td><%= restaurant.ownername %></td>
+        <td><%= restaurant.address_one %></td>
+        <td><%= restaurant.address_two %></td>
+        <td><%= restaurant.city %></td>
+        <td><%= restaurant.state %></td>
+        <td><%= restaurant.zipcode %></td>
+        <td><%= restaurant.email %></td>
+        <td><%= restaurant.website %></td>
+        <td><%= restaurant.phone %></td>
+        <td><%= restaurant.restaurant_type %></td>
+        <td><%= restaurant.employees %></td>
+        <td><%= restaurant.revenue_type %></td>
+        <td><%= restaurant.marketing %></td>
+        <td><%= restaurant.marketing_budget_boolean %></td>
+        <td><%= restaurant.marketing_budget %></td>
+        <td><%= restaurant.social_media_boolean %></td>
+        <td><%= restaurant.social_media_types %></td>
+        <td><%= restaurant.other_social_media_types %></td>
+        <td><%= restaurant.online_ads_boolean %></td>
+        <td><%= restaurant.online_ads_types %></td>
+        <td><%= restaurant.other_online_ads_types %></td>
+        <td><%= restaurant.analytics_boolean %></td>
+        <td><%= restaurant.analytics_software %></td>
+        <td><%= restaurant.social_ads_boolean %></td>
+        <td><%= restaurant.why_social_ads %></td>
+        <td><%= restaurant.why_social_ads_other %></td>
+        <td><%= restaurant.ad_sites %></td>
+        <td><%= restaurant.other_ads_sites %></td>
+        <td><%= link_to 'Show', restaurant %></td>
+        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Restaurant', new_restaurant_path %>

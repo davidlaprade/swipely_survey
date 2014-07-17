@@ -1,0 +1,133 @@
+<%= form_for(@restaurant) do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+
+      <ul>
+      <% @restaurant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :establishment %><br>
+    <%= f.text_field :establishment %>
+  </div>
+  <div class="field">
+    <%= f.label :ownername %><br>
+    <%= f.text_field :ownername %>
+  </div>
+  <div class="field">
+    <%= f.label :address_one %><br>
+    <%= f.text_field :address_one %>
+  </div>
+  <div class="field">
+    <%= f.label :address_two %><br>
+    <%= f.text_field :address_two %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zipcode %><br>
+    <%= f.text_field :zipcode %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br>
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :restaurant_type %><br>
+    <%= f.text_field :restaurant_type %>
+  </div>
+  <div class="field">
+    <%= f.label :employees %><br>
+    <%= f.text_field :employees %>
+  </div>
+  <div class="field">
+    <%= f.label :revenue_type %><br>
+    <%= f.text_field :revenue_type %>
+  </div>
+  <div class="field">
+    <%= f.label :marketing %><br>
+    <%= f.text_field :marketing %>
+  </div>
+  <div class="field">
+    <%= f.label :marketing_budget_boolean %><br>
+    <%= f.text_field :marketing_budget_boolean %>
+  </div>
+  <div class="field">
+    <%= f.label :marketing_budget %><br>
+    <%= f.text_field :marketing_budget %>
+  </div>
+  <div class="field">
+    <%= f.label :social_media_boolean %><br>
+    <%= f.text_field :social_media_boolean %>
+  </div>
+  <div class="field">
+    <%= f.label :social_media_types %><br>
+    <%= f.text_field :social_media_types %>
+  </div>
+  <div class="field">
+    <%= f.label :other_social_media_types %><br>
+    <%= f.text_field :other_social_media_types %>
+  </div>
+  <div class="field">
+    <%= f.label :online_ads_boolean %><br>
+    <%= f.text_field :online_ads_boolean %>
+  </div>
+  <div class="field">
+    <%= f.label :online_ads_types %><br>
+    <%= f.text_field :online_ads_types %>
+  </div>
+  <div class="field">
+    <%= f.label :other_online_ads_types %><br>
+    <%= f.text_field :other_online_ads_types %>
+  </div>
+  <div class="field">
+    <%= f.label :analytics_boolean %><br>
+    <%= f.text_field :analytics_boolean %>
+  </div>
+  <div class="field">
+    <%= f.label :analytics_software %><br>
+    <%= f.text_field :analytics_software %>
+  </div>
+  <div class="field">
+    <%= f.label :social_ads_boolean %><br>
+    <%= f.text_field :social_ads_boolean %>
+  </div>
+  <div class="field">
+    <%= f.label :why_social_ads %><br>
+    <%= f.text_field :why_social_ads %>
+  </div>
+  <div class="field">
+    <%= f.label :why_social_ads_other %><br>
+    <%= f.text_field :why_social_ads_other %>
+  </div>
+  <div class="field">
+    <%= f.label :ad_sites %><br>
+    <%= f.text_field :ad_sites %>
+  </div>
+  <div class="field">
+    <%= f.label :other_ads_sites %><br>
+    <%= f.text_field :other_ads_sites %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
