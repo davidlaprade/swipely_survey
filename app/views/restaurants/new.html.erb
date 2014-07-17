@@ -194,12 +194,6 @@
                <ul class="data-list"> -->
 
 
-
-
-
-<!-- don't forget to drop his folders in the assets button -->
-
-
               </ul>
           
           </div><!-- end col-md-6 -->
@@ -219,12 +213,6 @@
             <% @restaurant_types.each do |rt| %>
               <li><%= f.radio_button :restaurant_type, rt, :class => "required check_radio" %><label><%= rt %></label></li>
             <% end %>
-
-<!-- to populate these radio buttons, you need to  -->
-<!-- create this method in restaurants model:
-      def self.restaurant_types
-        ["Coffeehouse", "Fast Food", "Fast Casual", "Casual", "Fine", "Bar or Pub", "Nightclub"]
-      end  -->
 
            <!--  <li><input name="resttype" type="radio" class="required check_radio" value="Coffeehouse or Cafe"><label>Coffeehouse or Cafe</label></li>
             <li><input name="resttype" type="radio" class="required check_radio" value="Fast Food"><label>Fast Food</label></li>
@@ -260,14 +248,6 @@
               <li><%= f.radio_button :revenue_type, rt, :class => "required check_radio" %><label><%= rt %></label></li>
             <% end %>
 
-<!-- to populate these radio buttons, you need to  -->
-<!-- create this method in restaurants model:
-      def self.revenue_types
-        ["Less Than $1 Million", "Greater Than $1 Million", "Greater Than $2 Million", "Other"]
-      end  -->
-
-
-
             <!-- <li><input name="revenue" type="radio" class="required check_radio" value="1"><label>Less Than $1 Million</label></li>
             <li><input name="revenue" type="radio" class="required check_radio" value="2"><label>Greater Than $1 Million</label></li>
             <li><input name="revenue" type="radio" class="required check_radio" value="3"><label>Greater Than $2 Million</label></li> -->
@@ -288,12 +268,6 @@
               <li><%= f.radio_button :marketing, m, :class => "required check_radio" %><label><%= m %></label></li>
               <% end %>
 
-<!-- to populate these radio buttons, you need to  -->
-<!-- create this method in restaurants model:
-      def yes_no
-        ["Yes", "No"]
-      end  -->
-
               <!-- <li><input name="staffmarketer" type="radio" class="required check_radio" value="yes"><label>Yes</label></li>
               <li><input name="staffmarketer" type="radio" class="required check_radio" value="no"><label>No</label></li> -->
             </ul>
@@ -306,21 +280,12 @@
           <h3>Do you have a marketing budget?</h3>
           <ul class="data-list-2" clearfix>
 
-<!-- do what you did for question 2 -->
            <% @yes_no.each do |mbb| %>
               <li><%= f.radio_button :marketing_budget_boolean, mbb, :class => "required check_radio" %><label><%= mbb %></label></li>
               <% end %>
 
-            <!-- to populate these radio buttons, you need to  -->
-            <!-- create this method in restaurants model:
-                  def yes_no
-                    ["Yes", "No"]
-                  end  -->
-
               <!-- <li><input name="budget" type="radio" class="required check_radio" value="no"><label>No</label></li>
               <li><input name="budget" type="radio" class="required check_radio" value="yes"><label>Yes</label></li> -->
-
-<!-- do what you did for question 1 -->
 
               <li><%= f.text_field :marketing_budget, :class => "required form-control", :placeholder => "If Yes Enter Budget" %></li>
               <!-- <li><input type="number" name="budgetamt" class="form-control" placeholder="If Yes Enter Budget"></li> -->
@@ -334,39 +299,21 @@
           <h3>Do you have a social media presence?</h3>
           <ul class="data-list-2">
 
-<!-- do what you did for question 2 -->
-
               <% @yes_no.each do |m| %>
               <li><%= f.radio_button :social_media_boolean, m, :class => "required check_radio" %><label><%= m %></label></li>
               <% end %>
 
-            <!-- to populate these radio buttons, you need to  -->
-            <!-- create this method in restaurants model:
-                  def yes_no
-                    ["Yes", "No"]
-                  end  -->
-
               <!-- <li><input name="smpresence" type="radio" class="required check_radio" value="no"><label>No</label></li>
               <li><input name="smpresence" type="radio" class="required check_radio" value="yes"><label>Yes</label></li> -->
-
-<!-- look up rails form for checkboxes -->
 
               <% @socialmedia.each do |m| %>
               <li><%= f.check_box :social_media_types, m, :class => "check_radio" %><label><%= m %></label></li>
               <% end %>
 
-              <!-- to populate these check boxes, you need to  -->
-              <!-- create this method in restaurants model:
-                  def socialmedia
-                    ["Facebook", "Twitter", "Instagram", "Other"]
-                  end  -->
-
               <!-- <li><input name="smpresence[]" type="checkbox" class="check_radio" value="Facebook"><label>Facebook</label></li>
               <li><input name="smpresence[]" type="checkbox" class="check_radio" value="Twitter"><label>Twitter</label></li>
               <li><input name="smpresence[]" type="checkbox" class="check_radio" value="Instagram"><label>Instagram</label></li>
               <li><input name="smpresence[]" type="checkbox" class="check_radio" value="Other"><label>Other</label></li> -->
-
-<!-- do what you did for question 1 -->
 
               <li><%= f.text_field :other_social_media_types, :class => "form-control", :placeholder => "If other, which?" %></li>
 
@@ -385,23 +332,10 @@
               <li><%= f.radio_button :online_ads_boolean, m, :class => "required check_radio" %><label><%= m %></label></li>
               <% end %>
 
-            <!-- to populate these radio buttons, you need to  -->
-            <!-- create this method in restaurants model:
-                  def yes_no
-                    ["Yes", "No"]
-                  end  -->
-
               <% @socialmedia.each do |m| %>
               <li><%= f.check_box :online_ads_types, m, :class => "check_radio" %><label><%= m %></label></li>
               <% end %>
               <li><%= f.text_field :other_online_ads_types, :class => "form-control", :placeholder => "If other, which?" %></li>
-
-              <!-- to populate these check boxes, you need to  -->
-              <!-- create this method in restaurants model:
-                  def socialmedia
-                    ["Facebook", "Twitter", "Instagram", "Other"]
-                  end  -->
-
 
             <!-- <li><input name="smads" type="radio" class="required check_radio" value="no"><label>No</label></li>
             <li><input name="smads" type="radio" class="required check_radio" value="yes"><label>Yes</label></li> -->
@@ -426,12 +360,6 @@
               <li><%= f.radio_button :analytics_boolean, m, :class => "required check_radio" %><label><%= m %></label></li>
               <% end %>
 
-            <!-- to populate these radio buttons, you need to  -->
-            <!-- create this method in restaurants model:
-                  def yes_no
-                    ["Yes", "No"]
-                  end  -->
-
               <li><%= f.text_field :analytics_software, :class => "form-control", :placeholder => "If so, which?" %></li>
 
 
@@ -453,14 +381,6 @@
               <li><%= f.radio_button :social_ads_boolean, m, :class => "required check_radio" %><label><%= m %></label></li>
               <% end %>
 
-            <!-- to populate these radio buttons, you need to  -->
-            <!-- create this method in restaurants model:
-                  def yes_no
-                    ["Yes", "No"]
-                  end  -->
-
-
-
 <!--               <li><input name="socialpromote" type="radio" class="required check_radio" value="no"><label>No</label></li>
               <li><input name="socialpromote" type="radio" class="required check_radio" value="yes"><label>Yes</label></li> -->
           </ul>
@@ -478,11 +398,6 @@
               <li><%= f.radio_button :why_social_ads, m, :class => "required check_radio" %><label><%= m %></label></li>
               <% end %>
 
-            <!-- to populate these radio buttons, you need to  -->
-            <!-- create this method in restaurants model:
-                  def social_ads_reasons
-                    ["N/A", "Promote brand awareness and bring in new customers", "Engage with new and existing customers", "Reward existing customers and promote deals", "All of the above", "Other"]
-                  end  -->
               <li><%= f.text_field :why_social_ads_other, :class => "form-control", :placeholder => "If other, specify:" %></li>
 
               <!-- <li><input name="useads" type="radio" class="required check_radio" value="na"><label>N/A</label></li>
@@ -507,14 +422,6 @@
               <li><%= f.check_box :ad_sites, m, :class => "required check_radio" %><label><%= m %></label></li>
               <% end %>
               <li><%= f.text_field :other_ads_sites, :class => "form-control", :placeholder => "If other, which?" %></li>
-
-              <!-- to populate these check boxes, you need to  -->
-              <!-- create this method in restaurants model:
-                  def socialmedia
-                    ["Facebook", "Twitter", "Instagram", "Other"]
-                  end  -->
-
-
 
               <!-- <li><input name="whichsite[]" type="checkbox" class="required check_radio" value="na"><label>N/A</label></li>
               <li><input name="whichsite[]" type="checkbox" class="required check_radio" value="Facebook"><label>Facebook</label></li>

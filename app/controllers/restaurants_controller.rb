@@ -14,6 +14,7 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/new
   def new
+    params[:restaurant][:category_id] ||= []
     @restaurant = Restaurant.new
     # see the restaurant model for how these variables work
     @restaurant_types = Restaurant.restaurant_types

@@ -1,4 +1,5 @@
 class Restaurant < ActiveRecord::Base
+has_and_belongs_to_many :categories
 
 # you need "self." at the begining of the method name to call it on the class Restaurant itself, not an instance of the class
 def self.restaurant_types
