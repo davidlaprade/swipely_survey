@@ -306,9 +306,15 @@
               <!-- <li><input name="smpresence" type="radio" class="required check_radio" value="no"><label>No</label></li>
               <li><input name="smpresence" type="radio" class="required check_radio" value="yes"><label>Yes</label></li> -->
 
-              <% @socialmedia.each do |m| %>
-              <li><%= f.check_box :social_media_types, m, :class => "check_radio" %><label><%= m %></label></li>
-              <% end %>
+
+                <%= f.fields_for :social_media_types, @restaurant.social_media_types do |p| %>
+                <%= p.check_box :facebook %>
+                <%= p.check_box :twitter %>
+                <%= p.check_box :instagram %>
+                <%= p.check_box :yelp %>
+                <%= p.check_box :urban_spoon %>
+                <%= p.check_box :other %>
+                <% end %>
 
               <!-- <li><input name="smpresence[]" type="checkbox" class="check_radio" value="Facebook"><label>Facebook</label></li>
               <li><input name="smpresence[]" type="checkbox" class="check_radio" value="Twitter"><label>Twitter</label></li>
@@ -332,9 +338,20 @@
               <li><%= f.radio_button :online_ads_boolean, m, :class => "required check_radio" %><label><%= m %></label></li>
               <% end %>
 
-              <% @socialmedia.each do |m| %>
-              <li><%= f.check_box :online_ads_types, m, :class => "check_radio" %><label><%= m %></label></li>
-              <% end %>
+
+                <%= f.fields_for :online_ads_types, @restaurant.online_ads_types do |p| %>
+                <%= p.check_box :facebook %>
+                <%= p.check_box :twitter %>
+                <%= p.check_box :instagram %>
+                <%= p.check_box :yelp %>
+                <%= p.check_box :urban_spoon %>
+                <%= p.check_box :other %>
+                <% end %>
+     
+
+
+
+
               <li><%= f.text_field :other_online_ads_types, :class => "form-control", :placeholder => "If other, which?" %></li>
 
             <!-- <li><input name="smads" type="radio" class="required check_radio" value="no"><label>No</label></li>
@@ -418,9 +435,20 @@
           <h3>Which social media site would you want to use for advertising?</h3>
              <ul class="data-list-2" clearfix>
 
-              <% @socialmedia.each do |m| %>
-              <li><%= f.check_box :ad_sites, m, :class => "required check_radio" %><label><%= m %></label></li>
-              <% end %>
+
+                <%= f.fields_for :ad_sites, @restaurant.ad_sites do |p| %>
+                <%= p.check_box :facebook %><label>Facebook</label>
+                <%= p.check_box :twitter %>
+                <%= p.check_box :instagram %>
+                <%= p.check_box :yelp %>
+                <%= p.check_box :urban_spoon %>
+                <%= p.check_box :other %>
+                <% end %>
+
+
+
+
+
               <li><%= f.text_field :other_ads_sites, :class => "form-control", :placeholder => "If other, which?" %></li>
 
               <!-- <li><input name="whichsite[]" type="checkbox" class="required check_radio" value="na"><label>N/A</label></li>
