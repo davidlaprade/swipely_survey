@@ -15,6 +15,12 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/new
   def new
     @restaurant = Restaurant.new
+    # see the restaurant model for how these variables work
+    @restaurant_types = Restaurant.restaurant_types
+    @revenue_types = Restaurant.revenue_types
+    @yes_no = Restaurant.yes_no
+    @socialmedia = Restaurant.socialmedia
+    @social_ads_reasons = Restaurant.social_ads_reasons
   end
 
   # GET /restaurants/1/edit
