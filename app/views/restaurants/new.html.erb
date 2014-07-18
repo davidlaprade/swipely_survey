@@ -102,8 +102,6 @@
 		<div id="progressbar"></div>
 		<div class="shadow"></div>
 	</div><!-- end top-wizard -->
-
-    <form name="example-1" id="wrapped" action="survey_send_1.php" method="POST">
     <div id="middle-wizard">
       
 <!-- creates a form around the @restaurant form -->
@@ -308,12 +306,12 @@
 
 
                 <%= f.fields_for :social_media_types, @restaurant.social_media_types do |p| %>
-                <%= p.check_box :facebook %>
-                <%= p.check_box :twitter %>
-                <%= p.check_box :instagram %>
-                <%= p.check_box :yelp %>
-                <%= p.check_box :urban_spoon %>
-                <%= p.check_box :other %>
+                <%= p.check_box :facebook %><label>Facebook</label>
+                <%= p.check_box :twitter %><label>Twitter</label>
+                <%= p.check_box :instagram %><label>Instagram</label>
+                <%= p.check_box :yelp %><label>Yelp</label>
+                <%= p.check_box :urban_spoon %><label>Urban Spoon</label>
+                <%= p.check_box :other %><label>Other</label>
                 <% end %>
 
               <!-- <li><input name="smpresence[]" type="checkbox" class="check_radio" value="Facebook"><label>Facebook</label></li>
@@ -340,12 +338,12 @@
 
 
                 <%= f.fields_for :online_ads_types, @restaurant.online_ads_types do |p| %>
-                <%= p.check_box :facebook %>
-                <%= p.check_box :twitter %>
-                <%= p.check_box :instagram %>
-                <%= p.check_box :yelp %>
-                <%= p.check_box :urban_spoon %>
-                <%= p.check_box :other %>
+                <%= p.check_box :facebook %><label>Facebook</label>
+                <%= p.check_box :twitter %><label>Twitter</label>
+                <%= p.check_box :instagram %><label>Instagram</label>
+                <%= p.check_box :yelp %><label>Yelp</label>
+                <%= p.check_box :urban_spoon %><label>Urban Spoon</label>
+                <%= p.check_box :other %><label>Other</label>
                 <% end %>
      
 
@@ -438,11 +436,11 @@
 
                 <%= f.fields_for :ad_sites, @restaurant.ad_sites do |p| %>
                 <%= p.check_box :facebook %><label>Facebook</label>
-                <%= p.check_box :twitter %>
-                <%= p.check_box :instagram %>
-                <%= p.check_box :yelp %>
-                <%= p.check_box :urban_spoon %>
-                <%= p.check_box :other %>
+                <%= p.check_box :twitter %><label>Twitter</label>
+                <%= p.check_box :instagram %><label>Instagram</label>
+                <%= p.check_box :yelp %><label>Yelp</label>
+                <%= p.check_box :urban_spoon %><label>Urban Spoon</label>
+                <%= p.check_box :other %><label>Other</label>
                 <% end %>
 
 
@@ -477,7 +475,6 @@
 			<button type="button" name="backward" class="backward">Backward</button>
 			<button type="button" name="forward" class="forward">Forward </button>
 		</div><!-- end bottom-wizard -->
-	</form>
     
 </div><!-- end Survey container -->
 
