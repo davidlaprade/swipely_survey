@@ -1,7 +1,6 @@
 class Restaurant < ActiveRecord::Base
 # has_and_belongs_to_many :categories
 
-
 partial_updates = false
 
 # to get the checkboxes working
