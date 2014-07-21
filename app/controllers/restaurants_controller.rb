@@ -14,7 +14,6 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/new
   def new
-    # params[:restaurant][:category_id] ||= []
     @restaurant = Restaurant.new
     # see the restaurant model for how these variables work
     @restaurant_types = Restaurant.restaurant_types
@@ -31,7 +30,10 @@ class RestaurantsController < ApplicationController
   # POST /restaurants
   # POST /restaurants.json
   def create
+  
+    # raise restaurant_params.inspect
     @restaurant = Restaurant.new(restaurant_params)
+
 
     respond_to do |format|
       if @restaurant.save
@@ -76,6 +78,12 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:establishment, :ownername, :address_one, :address_two, :city, :state, :zipcode, :email, :website, :phone, :restaurant_type, :employees, :revenue_type, :marketing, :marketing_budget_boolean, :marketing_budget, :social_media_boolean, :social_media_types, :other_social_media_types, :online_ads_boolean, :online_ads_types, :other_online_ads_types, :analytics_boolean, :analytics_software, :social_ads_boolean, :why_social_ads, :why_social_ads_other, :ad_sites, :other_ads_sites)
+      params.require(:restaurant).permit(:establishment, :ownername, :address_one, :address_two, :city, 
+        :state, :zipcode, :email, :website, :phone, :restaurant_type, :employees, :revenue_type, :marketing, 
+        :marketing_budget_boolean, :marketing_budget, :social_media_boolean, 
+        :online_ads_boolean, :online_ads_types,  
+        :analytics_boolean, :analytics_software, :social_ads_boolean, :why_social_ads, :why_social_ads_other, 
+        :ad_sites, :other_ads_sites, {:social_media_types => {}}, {:other_social_media_types => {}}, {:other_online_ads_types => {}})
     end
+
 end

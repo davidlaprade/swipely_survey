@@ -1,9 +1,13 @@
 class Restaurant < ActiveRecord::Base
 # has_and_belongs_to_many :categories
 
-serialize :social_media_types
-serialize :online_ads_types
-serialize :ad_sites
+
+partial_updates = false
+
+# to get the checkboxes working
+serialize :social_media_types, Hash
+serialize :online_ads_types, Hash
+serialize :ad_sites, Hash
 
 # you need "self." at the begining of the method name to call it on the class Restaurant itself, not an instance of the class
 def self.restaurant_types

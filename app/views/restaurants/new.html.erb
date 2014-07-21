@@ -304,15 +304,14 @@
               <!-- <li><input name="smpresence" type="radio" class="required check_radio" value="no"><label>No</label></li>
               <li><input name="smpresence" type="radio" class="required check_radio" value="yes"><label>Yes</label></li> -->
 
-
-                <%= f.fields_for :social_media_types, @restaurant.social_media_types do |p| %>
-                <%= p.check_box :facebook %><label>Facebook</label>
-                <%= p.check_box :twitter %><label>Twitter</label>
-                <%= p.check_box :instagram %><label>Instagram</label>
-                <%= p.check_box :yelp %><label>Yelp</label>
-                <%= p.check_box :urban_spoon %><label>Urban Spoon</label>
-                <%= p.check_box :other %><label>Other</label>
-                <% end %>
+              <%= f.fields_for :social_media_types, @restaurant.social_media_types do |p| %>
+              <%= p.check_box :facebook %><label>Facebook</label>
+              <%= p.check_box :twitter %><label>Twitter</label>
+              <%= p.check_box :instagram %><label>Instagram</label>
+              <%= p.check_box :yelp %><label>Yelp</label>
+              <%= p.check_box :urbanspoon %><label>Urbanspoon</label>
+              <%= p.check_box :other %><label>Other</label>
+              <% end %>
 
               <!-- <li><input name="smpresence[]" type="checkbox" class="check_radio" value="Facebook"><label>Facebook</label></li>
               <li><input name="smpresence[]" type="checkbox" class="check_radio" value="Twitter"><label>Twitter</label></li>
@@ -342,7 +341,7 @@
                 <%= p.check_box :twitter %><label>Twitter</label>
                 <%= p.check_box :instagram %><label>Instagram</label>
                 <%= p.check_box :yelp %><label>Yelp</label>
-                <%= p.check_box :urban_spoon %><label>Urban Spoon</label>
+                <%= p.check_box :urbanspoon %><label>Urbanspoon</label>
                 <%= p.check_box :other %><label>Other</label>
                 <% end %>
      
@@ -439,7 +438,7 @@
                 <%= p.check_box :twitter %><label>Twitter</label>
                 <%= p.check_box :instagram %><label>Instagram</label>
                 <%= p.check_box :yelp %><label>Yelp</label>
-                <%= p.check_box :urban_spoon %><label>Urban Spoon</label>
+                <%= p.check_box :urbanspoon %><label>Urbanspoon</label>
                 <%= p.check_box :other %><label>Other</label>
                 <% end %>
 
