@@ -3,6 +3,9 @@ class Restaurant < ActiveRecord::Base
 
 partial_updates = false
 
+# this was required here: http://api.rubyonrails.org/classes/ActiveModel/Serialization.html
+include ActiveModel::Serialization
+
 # to get the checkboxes working
 serialize :social_media_types, Hash
 serialize :online_ads_types, Hash

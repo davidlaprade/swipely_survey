@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     @restaurants = Restaurant.all
+    @restaurant.ad_sites = params[:ad_sites].join(',')
   end
 
   # GET /restaurants/1
@@ -34,6 +35,8 @@ class RestaurantsController < ApplicationController
   
     # raise restaurant_params.inspect
     @restaurant = Restaurant.new(restaurant_params)
+
+    @restaurant.ad_sites = params[:ad_sites].join(',')
 
 
     respond_to do |format|

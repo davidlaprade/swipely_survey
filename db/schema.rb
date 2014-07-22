@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717190433) do
+ActiveRecord::Schema.define(version: 20140722175621) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -37,17 +37,17 @@ ActiveRecord::Schema.define(version: 20140717190433) do
     t.string   "marketing_budget_boolean"
     t.string   "marketing_budget"
     t.string   "social_media_boolean"
-    t.string   "social_media_types"
+    t.text     "social_media_types"
     t.string   "other_social_media_types"
     t.string   "online_ads_boolean"
-    t.string   "online_ads_types"
+    t.text     "online_ads_types"
     t.string   "other_online_ads_types"
     t.string   "analytics_boolean"
     t.string   "analytics_software"
     t.string   "social_ads_boolean"
     t.string   "why_social_ads"
     t.string   "why_social_ads_other"
-    t.string   "ad_sites"
+    t.text     "ad_sites"
     t.string   "other_ads_sites"
     t.datetime "created_at"
     t.datetime "updated_at"
