@@ -6,7 +6,6 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     @restaurants = Restaurant.all
-    @restaurant.ad_sites = params[:ad_sites].join(',')
   end
 
   # GET /restaurants/1
@@ -36,7 +35,15 @@ class RestaurantsController < ApplicationController
     # raise restaurant_params.inspect
     @restaurant = Restaurant.new(restaurant_params)
 
-    @restaurant.ad_sites = params[:ad_sites].join(',')
+    @hash = params[:ad_sites]
+    @string = ""
+    @hash.each do |key, value|
+      if @hash[key] == "1"
+        @string = @string + key + " "
+      end
+    end
+
+    @restaurant.ad_sites = @string
 
 
     respond_to do |format|
@@ -87,7 +94,7 @@ class RestaurantsController < ApplicationController
         :marketing_budget_boolean, :marketing_budget, :social_media_boolean, 
         :online_ads_boolean, :online_ads_types,  
         :analytics_boolean, :analytics_software, :social_ads_boolean, :why_social_ads, :why_social_ads_other, 
-        :ad_sites, :other_ads_sites, {:social_media_types => {}}, {:other_social_media_types => {}}, {:other_online_ads_types => {}})
+        :other_ads_sites, :ad_sites, {:social_media_types => {}}, {:other_social_media_types => {}}, {:other_online_ads_types => {}})
     end
 
 end

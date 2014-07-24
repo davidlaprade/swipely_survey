@@ -1,4 +1,4 @@
-<h1>New restaurant</h1>
+<h1>New Survey</h1>
 
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -434,15 +434,12 @@
           <h3>Which social media site would you want to use for advertising?</h3>
              <ul class="data-list-2" clearfix>
 
-
                 <%= f.fields_for :ad_sites, @restaurant.ad_sites do |p| %>
-                <%= p.check_box :facebook %><label>Facebook</label>
-                <%= p.check_box :twitter %><label>Twitter</label>
-                <%= p.check_box :instagram %><label>Instagram</label>
-                <%= p.check_box :yelp %><label>Yelp</label>
-                <%= p.check_box :urbanspoon %><label>Urbanspoon</label>
-                <%= p.check_box :other %><label>Other</label>
+                <%= check_box_tag "ad_sites[Facebook]" %><label>Facebook</label>
+                <%= check_box_tag "ad_sites[Twitter]" %><label>Twitter</label>
+                <%= check_box_tag "ad_sites[Instagram]" %><label>Instagram</label>
                 <% end %>
+
 
 
 
