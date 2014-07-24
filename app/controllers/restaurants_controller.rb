@@ -35,15 +35,16 @@ class RestaurantsController < ApplicationController
     # raise restaurant_params.inspect
     @restaurant = Restaurant.new(restaurant_params)
 
-    @hash = params[:ad_sites]
-    @string = ""
-    @hash.each do |key, value|
-      if @hash[key] == "1"
-        @string = @string + key + " "
-      end
-    end
+    # gets checkbox output, converts it to string format
+    @other_ads = params[:online_ads_types]
+    @restaurant.online_ads_types = checkbox_values(@other_ads)
+    @social_media = params[:social_media_types]
+    @restaurant.social_media_types = checkbox_values(@social_media)
+    @ad_sites = params[:ad_sites]
+    @restaurant.ad_sites = checkbox_values(@ad_sites)
 
-    @restaurant.ad_sites = @string
+
+
 
 
     respond_to do |format|
@@ -87,6 +88,17 @@ class RestaurantsController < ApplicationController
       @restaurant = Restaurant.find(params[:id])
     end
 
+    # Stores the results of checkbox fields as a string
+    def checkbox_values(hash)
+      @string = ""
+      hash.each do |key, value|
+        if hash[key] == "1"
+          @string = @string + key + ", "
+        end
+      end
+      return @string
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
       params.require(:restaurant).permit(:establishment, :ownername, :address_one, :address_two, :city, 
@@ -94,7 +106,7 @@ class RestaurantsController < ApplicationController
         :marketing_budget_boolean, :marketing_budget, :social_media_boolean, 
         :online_ads_boolean, :online_ads_types,  
         :analytics_boolean, :analytics_software, :social_ads_boolean, :why_social_ads, :why_social_ads_other, 
-        :other_ads_sites, :ad_sites, {:social_media_types => {}}, {:other_social_media_types => {}}, {:other_online_ads_types => {}})
+        :other_ads_sites, :ad_sites, :social_media_types, :other_social_media_types, :other_online_ads_types)
     end
 
 end

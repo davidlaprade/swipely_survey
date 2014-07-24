@@ -1,15 +1,15 @@
 class Restaurant < ActiveRecord::Base
 # has_and_belongs_to_many :categories
 
-partial_updates = false
+# partial_updates = false
 
-# this was required here: http://api.rubyonrails.org/classes/ActiveModel/Serialization.html
-include ActiveModel::Serialization
+# # this was required here: http://api.rubyonrails.org/classes/ActiveModel/Serialization.html
+# include ActiveModel::Serialization
 
-# to get the checkboxes working
-serialize :social_media_types, Hash
-serialize :online_ads_types, Hash
-# serialize :ad_sites, Hash
+# # to get the checkboxes working
+# serialize :social_media_types, Hash
+# serialize :online_ads_types, Hash
+# # serialize :ad_sites, Hash
 
 # you need "self." at the begining of the method name to call it on the class Restaurant itself, not an instance of the class
 def self.restaurant_types

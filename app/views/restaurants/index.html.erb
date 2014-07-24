@@ -1,4 +1,4 @@
-<h1>Listing restaurants</h1>
+<h1>Completed Surveys</h1>
 
 <table>
   <thead>
@@ -66,7 +66,7 @@
         <td><%= restaurant.social_ads_boolean %></td>
         <td><%= restaurant.why_social_ads %></td>
         <td><%= restaurant.why_social_ads_other %></td>
-        <td><%= restaurant.ad_sites.split(" ") %></td>
+        <td><%= restaurant.ad_sites %></td>
         <td><%= restaurant.other_ads_sites %></td>
         <td><%= link_to 'Show', restaurant %></td>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
@@ -78,4 +78,4 @@
 
 <br>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+<%= link_to 'New Survey', new_restaurant_path %>

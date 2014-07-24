@@ -298,31 +298,18 @@
         <div class="col-md-10">
           <h3>Do you have a social media presence?</h3>
           <ul class="data-list-2">
-
               <% @yes_no.each do |m| %>
-              <li><%= f.radio_button :social_media_boolean, m, :class => "required check_radio" %><label><%= m %></label></li>
+                <li><%= f.radio_button :social_media_boolean, m, :class => "required check_radio" %><label><%= m %></label></li>
               <% end %>
-
-              <!-- <li><input name="smpresence" type="radio" class="required check_radio" value="no"><label>No</label></li>
-              <li><input name="smpresence" type="radio" class="required check_radio" value="yes"><label>Yes</label></li> -->
-
               <%= f.fields_for :social_media_types, @restaurant.social_media_types do |p| %>
-              <%= p.check_box :facebook %><label>Facebook</label>
-              <%= p.check_box :twitter %><label>Twitter</label>
-              <%= p.check_box :instagram %><label>Instagram</label>
-              <%= p.check_box :yelp %><label>Yelp</label>
-              <%= p.check_box :urbanspoon %><label>Urbanspoon</label>
-              <%= p.check_box :other %><label>Other</label>
+                <%= check_box_tag "social_media_types[Facebook]" %><label>Facebook</label>
+                <%= check_box_tag "social_media_types[Twitter]" %><label>Twitter</label>
+                <%= check_box_tag "social_media_types[Instagram]" %><label>Instagram</label>
+                <%= check_box_tag "social_media_types[Yelp]" %><label>Yelp</label>
+                <%= check_box_tag "social_media_types[Urbanspoon]" %><label>Urbanspoon</label>
+                <%= check_box_tag "social_media_types[Other]" %><label>Other</label>
               <% end %>
-
-              <!-- <li><input name="smpresence[]" type="checkbox" class="check_radio" value="Facebook"><label>Facebook</label></li>
-              <li><input name="smpresence[]" type="checkbox" class="check_radio" value="Twitter"><label>Twitter</label></li>
-              <li><input name="smpresence[]" type="checkbox" class="check_radio" value="Instagram"><label>Instagram</label></li>
-              <li><input name="smpresence[]" type="checkbox" class="check_radio" value="Other"><label>Other</label></li> -->
-
               <li><%= f.text_field :other_social_media_types, :class => "form-control", :placeholder => "If other, which?" %></li>
-
-              <!-- <li><input type="text" name="othersocialmedia" class="form-control" placeholder="Other Social Media"></li> -->
           </ul>
         </div>
       </div><!-- end step -->
@@ -337,19 +324,14 @@
               <li><%= f.radio_button :online_ads_boolean, m, :class => "required check_radio" %><label><%= m %></label></li>
               <% end %>
 
-
-                <%= f.fields_for :online_ads_types, @restaurant.online_ads_types do |p| %>
-                <%= p.check_box :facebook %><label>Facebook</label>
-                <%= p.check_box :twitter %><label>Twitter</label>
-                <%= p.check_box :instagram %><label>Instagram</label>
-                <%= p.check_box :yelp %><label>Yelp</label>
-                <%= p.check_box :urbanspoon %><label>Urbanspoon</label>
-                <%= p.check_box :other %><label>Other</label>
-                <% end %>
-     
-
-
-
+              <%= f.fields_for :online_ads_types, @restaurant.online_ads_types do |p| %>
+              <%= check_box_tag "online_ads_types[Facebook]" %><label>Facebook</label>
+              <%= check_box_tag "online_ads_types[Twitter]" %><label>Twitter</label>
+              <%= check_box_tag "online_ads_types[Instagram]" %><label>Instagram</label>
+              <%= check_box_tag "online_ads_types[Yelp]" %><label>Yelp</label>
+              <%= check_box_tag "online_ads_types[Urbanspoon]" %><label>Urbanspoon</label>
+              <%= check_box_tag "online_ads_types[Other]" %><label>Other</label>
+              <% end %>
 
               <li><%= f.text_field :other_online_ads_types, :class => "form-control", :placeholder => "If other, which?" %></li>
 
@@ -432,27 +414,16 @@
       <div class="step row">
         <div class="col-md-10">
           <h3>Which social media site would you want to use for advertising?</h3>
-             <ul class="data-list-2" clearfix>
-
-                <%= f.fields_for :ad_sites, @restaurant.ad_sites do |p| %>
-                <%= check_box_tag "ad_sites[Facebook]" %><label>Facebook</label>
-                <%= check_box_tag "ad_sites[Twitter]" %><label>Twitter</label>
-                <%= check_box_tag "ad_sites[Instagram]" %><label>Instagram</label>
-                <% end %>
-
-
-
-
-
-
+              <%= f.fields_for :ad_sites, @restaurant.ad_sites do |p| %>
+              <%= check_box_tag "ad_sites[Facebook]" %><label>Facebook</label>
+              <%= check_box_tag "ad_sites[Twitter]" %><label>Twitter</label>
+              <%= check_box_tag "ad_sites[Instagram]" %><label>Instagram</label>
+              <%= check_box_tag "ad_sites[Yelp]" %><label>Yelp</label>
+              <%= check_box_tag "ad_sites[Urbanspoon]" %><label>Urbanspoon</label>
+              <%= check_box_tag "ad_sites[Other]" %><label>Other</label>
+              <% end %>
+              <ul class="data-list-2" clearfix>
               <li><%= f.text_field :other_ads_sites, :class => "form-control", :placeholder => "If other, which?" %></li>
-
-              <!-- <li><input name="whichsite[]" type="checkbox" class="required check_radio" value="na"><label>N/A</label></li>
-              <li><input name="whichsite[]" type="checkbox" class="required check_radio" value="Facebook"><label>Facebook</label></li>
-              <li><input name="whichsite[]" type="checkbox" class="required check_radio" value="Twitter"><label>Twitter</label></li>
-              <li><input name="whichsite[]" type="checkbox" class="required check_radio" value="Instagram"><label>Instagram</label></li>
-              <li><input name="whichsite[]" type="checkbox" class="required check_radio" value="Other"><label>Other</label></li>
-              <li><input type="text" name="othersmads" class="form-control" placeholder="Other Social Media"></li> -->
             </ul>
         </div>
       </div><!-- end step -->
